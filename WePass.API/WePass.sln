@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WePass.API", "WePass\WePass.API.csproj", "{3C18B28F-E489-47DB-AAE7-96DAB6626847}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8926DFC7-2A39-4938-95C0-2C9E91BACB2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{AB56120F-FE42-4746-93E4-95E57629F47B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FBA888A4-C4E8-4A3D-86E7-B2886B33DC24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{C3AFA120-21A1-4298-8AA6-AF2324D68E03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WePass.Domain", "WePass.Domain\WePass.Domain.csproj", "{2E241B1E-9645-4479-A2E8-7F7F0ABDE786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WePass.Infra", "WePass.Infra\WePass.Infra.csproj", "{0AFFD3D1-090A-4699-A69D-FF31702CECBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WePass.Service", "WePass.Service\WePass.Service.csproj", "{D65917F9-C7C8-4D10-9561-C0AC675D23B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C18B28F-E489-47DB-AAE7-96DAB6626847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C18B28F-E489-47DB-AAE7-96DAB6626847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C18B28F-E489-47DB-AAE7-96DAB6626847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C18B28F-E489-47DB-AAE7-96DAB6626847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E241B1E-9645-4479-A2E8-7F7F0ABDE786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E241B1E-9645-4479-A2E8-7F7F0ABDE786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E241B1E-9645-4479-A2E8-7F7F0ABDE786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E241B1E-9645-4479-A2E8-7F7F0ABDE786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AFFD3D1-090A-4699-A69D-FF31702CECBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFFD3D1-090A-4699-A69D-FF31702CECBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AFFD3D1-090A-4699-A69D-FF31702CECBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AFFD3D1-090A-4699-A69D-FF31702CECBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65917F9-C7C8-4D10-9561-C0AC675D23B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65917F9-C7C8-4D10-9561-C0AC675D23B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65917F9-C7C8-4D10-9561-C0AC675D23B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65917F9-C7C8-4D10-9561-C0AC675D23B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C18B28F-E489-47DB-AAE7-96DAB6626847} = {8926DFC7-2A39-4938-95C0-2C9E91BACB2E}
+		{2E241B1E-9645-4479-A2E8-7F7F0ABDE786} = {AB56120F-FE42-4746-93E4-95E57629F47B}
+		{0AFFD3D1-090A-4699-A69D-FF31702CECBE} = {C3AFA120-21A1-4298-8AA6-AF2324D68E03}
+		{D65917F9-C7C8-4D10-9561-C0AC675D23B0} = {FBA888A4-C4E8-4A3D-86E7-B2886B33DC24}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B381993D-A7B6-4D6B-9FCA-FD53D420084F}
+	EndGlobalSection
+EndGlobal
