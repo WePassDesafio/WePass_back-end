@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using System.IO;
+using WePass.API.Extension;
+using WePass.Domain.Configuration;
+using WePass.Infra.Context;
+
 
 namespace WePass
 {
@@ -14,11 +16,28 @@ namespace WePass
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            BuildWebHost(args)
+            .MigrateDbContext<WePassContext>((context, services) =>
+            {
+                var env = services.GetService<IHostingEnvironment>();
+                var settings = services.GetService<IOptions<WePassConfigurations>>();
+            }).Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .UseStartup<Startup>()
+            .UseContentRoot(Directory.GetCurrentDirectory())
+            .ConfigureAppConfiguration((builderContext, config) =>
+            {
+                config.AddEnvironmentVariables();
+            }).ConfigureLogging((hostingContext, builder) =>
+            {
+                builder.AddConfiguration(hostingContext.Configuration.GetSection("Log4NetCore"));
+                builder.SetMinimumLevel(LogLevel.Debug);
+                builder.AddConsole();
+                builder.AddDebug();
+            })
+            .Build();
     }
 }

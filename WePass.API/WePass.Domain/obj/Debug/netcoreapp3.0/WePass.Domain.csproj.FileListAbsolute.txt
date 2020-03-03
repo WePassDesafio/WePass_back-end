@@ -1,8 +1,8 @@
 D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\bin\Debug\netcoreapp3.0\WePass.Domain.deps.json
 D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\bin\Debug\netcoreapp3.0\WePass.Domain.dll
+D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\bin\Debug\netcoreapp3.0\WePass.Domain.pdb
 D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\obj\Debug\netcoreapp3.0\WePass.Domain.csprojAssemblyReference.cache
 D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\obj\Debug\netcoreapp3.0\WePass.Domain.AssemblyInfoInputs.cache
 D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\obj\Debug\netcoreapp3.0\WePass.Domain.AssemblyInfo.cs
-D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\bin\Debug\netcoreapp3.0\WePass.Domain.pdb
 D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\obj\Debug\netcoreapp3.0\WePass.Domain.dll
 D:\documentos\GitHub\wepass\back\WePass_back-end\WePass.API\WePass.Domain\obj\Debug\netcoreapp3.0\WePass.Domain.pdb
