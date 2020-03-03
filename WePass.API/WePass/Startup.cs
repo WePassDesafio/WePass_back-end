@@ -37,7 +37,7 @@ namespace WePass
             IHostingEnvironment env = serviceProvider.GetService<IHostingEnvironment>();
 
             var connectionString = string.Empty;
-            connectionString = Configuration.GetConnectionString("LivrariaContext");
+            connectionString = Configuration.GetConnectionString("WePassContext");
 
 
 
