@@ -4868,6 +4868,7 @@
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "AutoMapper": "9.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
