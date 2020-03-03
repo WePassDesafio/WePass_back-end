@@ -6,7 +6,7 @@ using WePass.Infra.Repositories.Base;
 
 namespace WePass.Infra.Repositories
 {
-    public class UsuarioRepository : BaseRepository<Domain.Model.Usuario, Usuario>, IUsuarioRepository
+    public class UsuarioRepository : RepositoryBase<Domain.Model.Usuario, Usuario>, IUsuarioRepository
     {
 
         #region Atributos

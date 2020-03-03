@@ -4,5 +4,6 @@ namespace WePass.Infra.Entities
 {
     public class UnitOfWork : EntityComplexBase
     {
+
     }
 }

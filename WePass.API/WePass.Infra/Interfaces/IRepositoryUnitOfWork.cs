@@ -2,10 +2,10 @@
 
 namespace WePass.Infra.Interfaces
 {
-    interface IRepositoryUnitOfWork
+    public interface IRepositoryUnitOfWork
     {
         IUsuarioRepository Usuario { get; }
-        ICartaoRepository Cartao { get; }
+        ICompraRepository Compra { get; }
         IEventoRepository Evento { get; }
         IPagamentoRepository Pagamento { get; }
         bool Commit();
