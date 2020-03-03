@@ -179,7 +179,11 @@
         },
         "frameworks": {
           "netcoreapp2.2": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj": {
+                "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -4450,6 +4450,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "WePass.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.NETCore.App": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/WePass.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WePass.Domain.dll": {}
+        }
       }
     }
   },
@@ -12094,6 +12108,11 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "WePass.Domain/1.0.0": {
+      "type": "project",
+      "path": "../WePass.Domain/WePass.Domain.csproj",
+      "msbuildProject": "../WePass.Domain/WePass.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12101,7 +12120,8 @@
       "FluentValidation >= 8.5.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "WePass.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12136,7 +12156,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj": {
+              "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

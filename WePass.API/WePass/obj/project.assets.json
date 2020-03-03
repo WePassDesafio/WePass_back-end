@@ -4887,7 +4887,8 @@
           "FluentValidation": "8.5.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor": "2.2.0",
-          "Microsoft.NETCore.App": "2.2.0"
+          "Microsoft.NETCore.App": "2.2.0",
+          "WePass.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WePass.Service.dll": {}

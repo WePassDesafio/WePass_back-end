@@ -8,6 +8,7 @@ namespace WePass.Domain.Model
     public class Compra : CreateBase
     {
         public int QuantidadeIngresso { get; set; }
+        public int Vezes { get; set; }
         //public Guid UsuarioId { get; set; }
         //public Guid EventoId { get; set; }
         //public Guid PagamentoId { get; set; }
