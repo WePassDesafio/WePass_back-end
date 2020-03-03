@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Config\" />
-    <Folder Include="Context\" />
-    <Folder Include="Entities\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Interfaces\Base\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +22,25 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.2" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WePass.Domain\WePass.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Libraries\Lang\message.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>message.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Libraries\Lang\message.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>message.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
