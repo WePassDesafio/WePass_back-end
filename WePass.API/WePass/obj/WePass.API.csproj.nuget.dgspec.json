@@ -186,6 +186,9 @@
             "projectReferences": {
               "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj": {
                 "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj"
+              },
+              "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj": {
+                "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj"
               }
             }
           }
@@ -199,6 +202,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[8.5.0, )"

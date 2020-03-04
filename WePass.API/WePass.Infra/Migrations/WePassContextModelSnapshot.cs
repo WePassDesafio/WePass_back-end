@@ -29,12 +29,24 @@ namespace WePass.Infra.Migrations
 
                     b.Property<DateTimeOffset>("CreateDate");
 
+                    b.Property<Guid>("EventoId");
+
+                    b.Property<Guid>("PagamentoId");
+
                     b.Property<int>("QuantidadeIngresso");
 
                     b.Property<DateTimeOffset?>("UpdateDate");
 
+                    b.Property<Guid>("UsuarioId");
+
                     b.HasKey("Id")
                         .HasName("Id_Compra");
+
+                    b.HasIndex("EventoId");
+
+                    b.HasIndex("PagamentoId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Compra");
                 });
@@ -55,14 +67,18 @@ namespace WePass.Infra.Migrations
 
                     b.Property<string>("NomeEvento");
 
+                    b.Property<int>("QuantidadeIngresso");
+
                     b.Property<DateTimeOffset?>("UpdateDate");
+
+                    b.Property<Guid>("UsuarioId");
 
                     b.Property<string>("ValorIngresso");
 
-                    b.Property<int>("quantidadeIngresso");
-
                     b.HasKey("Id")
                         .HasName("Id_Evento");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Evento");
                 });
@@ -78,6 +94,8 @@ namespace WePass.Infra.Migrations
                     b.Property<DateTimeOffset>("CreateDate");
 
                     b.Property<int?>("Dinheiro");
+
+                    b.Property<string>("FormaPagamento");
 
                     b.Property<DateTimeOffset?>("UpdateDate");
 
@@ -119,6 +137,32 @@ namespace WePass.Infra.Migrations
                         .HasName("Id_Usuario");
 
                     b.ToTable("Usuario");
+                });
+
+            modelBuilder.Entity("WePass.Infra.Entities.Compra", b =>
+                {
+                    b.HasOne("WePass.Infra.Entities.Evento", "Evento")
+                        .WithMany("Compras")
+                        .HasForeignKey("EventoId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("WePass.Infra.Entities.Pagamento", "Pagamento")
+                        .WithMany("Compras")
+                        .HasForeignKey("PagamentoId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("WePass.Infra.Entities.Usuario", "Usuario")
+                        .WithMany("Compras")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("WePass.Infra.Entities.Evento", b =>
+                {
+                    b.HasOne("WePass.Infra.Entities.Usuario", "Usuario")
+                        .WithMany("Eventos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 #pragma warning restore 612, 618
         }

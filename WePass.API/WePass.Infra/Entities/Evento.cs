@@ -7,10 +7,23 @@ namespace WePass.Infra.Entities
 {
     public class Evento : EntityComplexBase
     {
+        public Evento()
+        {
+            this.Compras = new List<Compra>();
+        }
+
         public string NomeEvento { get; set; }
         public string Categoria { get; set; }
         public string ValorIngresso { get; set; }
         public DateTime DataEvento { get; set; }
-        public int quantidadeIngresso { get; set; }
+        public int QuantidadeIngresso { get; set; }
+
+        //relacionamento com usuario
+        public Guid UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
+
+        // relacionameto com compras
+        public IList<Compra> Compras { get; set; }
+
     }
 }

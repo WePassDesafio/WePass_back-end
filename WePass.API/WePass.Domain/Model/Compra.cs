@@ -9,8 +9,17 @@ namespace WePass.Domain.Model
     {
         public int QuantidadeIngresso { get; set; }
         public int Vezes { get; set; }
-        //public Guid UsuarioId { get; set; }
-        //public Guid EventoId { get; set; }
-        //public Guid PagamentoId { get; set; }
+
+        //relacionamento com usuario
+        public Guid UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
+
+        //relacionamento com evento
+        public Guid EventoId { get; set; }
+        public Evento Evento { get; set; }
+
+        //relacionamento com pagamento
+        public Guid PagamentoId { get; set; }
+        public Pagamento Pagamento { get; set; }
     }
 }

@@ -12,13 +12,13 @@ namespace WePass.Service.Interfaces
 
         //Read
         Pagamento BuscarPagamentoPorId(Guid id);
-        List<Pagamento> BuscarTodosPagamentosPorId(Usuario usuario);
+        List<Pagamento> BuscarTodosPagamentosPorId(Pagamento pagamento);
 
         //Update
-        Pagamento EditarPagamento(Usuario usuario);
-        string AtivarUsuarioService(Guid id);
+        Pagamento EditarPagamento(Pagamento pagamento);
+        string AtivarPagamentoService(Guid id);
 
         //Delete
-        string DesativarUsuarioService(Usuario usuario);
+        string DesativarUsuarioService(Pagamento pagamento);
     }
 }

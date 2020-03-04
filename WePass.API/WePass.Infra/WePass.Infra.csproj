@@ -28,14 +28,14 @@
     <Compile Update="Libraries\Lang\message.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>message.resx</DependentUpon>
+      <DependentUpon>Message.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Libraries\Lang\message.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>message.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Libraries\Lang\Message.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -12,7 +12,7 @@ namespace WePass.Service.Interfaces
 
         //Read
         Evento BuscarEventoPorIdService(Guid id);
-        List<Evento> BuscarTodosEventorPorId(Usuario usuario);
+        List<Evento> BuscarTodosEventorPorId(Evento evento);
 
         //Update
         Evento EditarEventoService(Evento evento);

@@ -62,32 +62,6 @@ namespace WePass.Infra.Repositories.Base
             return query.AsNoTracking().FirstOrDefault();
         }
 
-        public void Add(T entity)
-        {
-            var model = _mapper.Map<K>(entity);
-            _db.Set<K>().Add(model);
-        }
-
-        public void Commit()
-        {
-            _db.SaveChanges();
-        }
-
-        public void Delete(T entity)
-        {
-            var model = _mapper.Map<K>(entity);
-            _db.Set<K>().Remove(model);
-        }
-
-        public void Delete(Expression<Func<T, bool>> where)
-        {
-            var models = _db.Set<K>().ProjectTo<T>(_mapper.ConfigurationProvider).Where(where);
-            if (models.Any())
-            {
-                var entities = _mapper.Map<List<K>>(models);
-                _db.Set<K>().RemoveRange(entities);
-            }
-        }
 
         public T FindBy(Expression<Func<T, bool>> where)
         {
@@ -96,10 +70,17 @@ namespace WePass.Infra.Repositories.Base
             return model;
         }
 
+
         public void Update(T entity)
         {
             var model = _mapper.Map<K>(entity);
             _db.Entry(model).State = EntityState.Modified;
+        }
+
+        public void Add(T entity)
+        {
+            var model = _mapper.Map<K>(entity);
+            _db.Set<K>().Add(model);
         }
 
         public Guid Incluir(T entity)
@@ -115,6 +96,32 @@ namespace WePass.Infra.Repositories.Base
         public T Alterar(T entity)
         {
             throw new NotImplementedException();
+        }
+
+        public void Delete(Expression<Func<T, bool>> where)
+        {
+            var models = _db.Set<K>().ProjectTo<T>(_mapper.ConfigurationProvider).Where(where);
+            if (models.Any())
+            {
+                var entities = _mapper.Map<List<K>>(models);
+                _db.Set<K>().RemoveRange(entities);
+            }
+        }
+
+        public void Delete(T entity)
+        {
+            var model = _mapper.Map<K>(entity);
+            _db.Set<K>().Remove(model);
+        }
+
+        public bool Deletar(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Commit()
+        {
+            _db.SaveChanges();
         }
     }
 }

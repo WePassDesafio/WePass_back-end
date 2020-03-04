@@ -1,40 +1,123 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using WePass.Domain.Exceptions;
 using WePass.Domain.Model;
+using WePass.Infra;
+using WePass.Infra.Interfaces;
+using WePass.Infra.Libraries.Lang;
 using WePass.Service.Interfaces;
 
 namespace WePass.Service.Services
 {
     public class EventoService : IEventoService
     {
+
+        #region Atributos
+
+        private readonly IMapper _mapper;
+        private readonly IRepositoryUnitOfWork _unitOfWork;
+
+        #endregion
+
+        #region Construtor
+
+        public EventoService(IRepositoryUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(typeof(MapperProfile));
+            });
+            _mapper = config.CreateMapper();
+        }
         public string AtivarEventoService(Guid id)
         {
-            throw new NotImplementedException();
+            var desativarEvento = BuscarEventoPorIdService(id);
+
+            if (desativarEvento.Active != true)
+            {
+                desativarEvento.Active = true;
+
+                _unitOfWork.Evento.Update(desativarEvento);
+                _unitOfWork.Commit();
+                return Message.MSG_S002;
+            }
+
+            return Message.MSG_D003;
         }
 
         public Evento BuscarEventoPorIdService(Guid id)
         {
-            throw new NotImplementedException();
+            var evento = _unitOfWork.Evento.Query(a => a.Id == id);
+
+            if (evento == null)
+            {
+                throw new WePassExceptions("Evento invalido");
+            }
+
+            return evento;
         }
 
-        public List<Evento> BuscarTodosEventorPorId(Usuario usuario)
+        public List<Evento> BuscarTodosEventorPorId(Evento evento)
         {
-            throw new NotImplementedException();
+            List<Evento> autor = new List<Evento>();
+
+            autor = _unitOfWork.Evento.List().OrderBy(x => x.NomeEvento).ToList();
+
+
+            if (autor == null)
+            {
+                throw new WePassExceptions("Usuario invalido");
+            }
+
+            return autor;
         }
 
         public string CadastrarEventoService(Evento evento)
         {
-            throw new NotImplementedException();
+            bool verificandoEvento = false;
+
+            if (verificandoEvento == false)
+            {
+                _unitOfWork.Evento.Add(evento);
+                _unitOfWork.Commit();
+                return Message.MSG_S001;
+            }
+            return Message.MSG_S004;
         }
 
         public string DesativarEventoService(Guid id)
         {
-            throw new NotImplementedException();
+            var desativarEvento = BuscarEventoPorIdService(id);
+
+            if (desativarEvento.Active != false)
+            {
+                desativarEvento.Active = false;
+
+                _unitOfWork.Evento.Update(desativarEvento);
+                _unitOfWork.Commit();
+                return Message.MSG_S002;
+            }
+
+            return Message.MSG_D003;
         }
 
         public Evento EditarEventoService(Evento evento)
         {
-            throw new NotImplementedException();
+            var editarEvento = BuscarEventoPorIdService(evento.Id);
+
+            if (editarEvento != null)
+            {
+                _unitOfWork.Evento.Update(evento);
+                _unitOfWork.Commit();
+            }
+
+            return evento;
         }
     }
+
+    #endregion
 }

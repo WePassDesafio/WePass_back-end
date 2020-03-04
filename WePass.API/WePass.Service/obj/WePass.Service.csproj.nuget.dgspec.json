@@ -66,14 +66,14 @@
         }
       }
     },
-    "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\WePass.Service.csproj": {
+    "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\WePass.Service.csproj",
-        "projectName": "WePass.Service",
-        "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\WePass.Service.csproj",
+        "projectUniqueName": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj",
+        "projectName": "WePass.Infra",
+        "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj",
         "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-        "outputPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\obj\\",
+        "outputPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -109,6 +109,103 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\WePass.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\WePass.Service.csproj",
+        "projectName": "WePass.Service",
+        "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\WePass.Service.csproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj": {
+                "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj"
+              },
+              "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj": {
+                "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[8.5.0, )"

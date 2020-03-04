@@ -4885,11 +4885,13 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "AutoMapper": "9.0.0",
           "FluentValidation": "8.5.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "WePass.Domain": "1.0.0"
+          "WePass.Domain": "1.0.0",
+          "WePass.Infra": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WePass.Service.dll": {}

@@ -12,10 +12,10 @@ namespace WePass.Service.Interfaces
 
         //Read
         Compra BuscarCompraPorIdService(Guid Id);
-        List<Compra> BuscarTodasComprasPorIdService(Usuario usuario);
+        List<Compra> BuscarTodasComprasPorIdService(Compra compra);
 
         //Update
-        Evento EditarCompraService(Evento evento);
+        Evento EditarCompraService(Compra compra);
         string AtivarCompraService(Guid id);
 
         //Delete

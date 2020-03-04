@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "FluentValidation/8.5.0": {
         "type": "package",
         "dependencies": {
@@ -4464,10 +4477,45 @@
         "runtime": {
           "bin/placeholder/WePass.Domain.dll": {}
         }
+      },
+      "WePass.Infra/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
+          "Microsoft.NETCore.App": "2.2.0",
+          "WePass.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WePass.Infra.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WePass.Infra.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/9.0.0": {
+      "sha512": "xCqvoxT4HIrNY/xlXG9W+BA/awdrhWvMTKTK/igkGSRbhOhpl3Q8O8Gxlhzjc9JsYqE7sS6AxgyuUUvZ6R5/Bw==",
+      "type": "package",
+      "path": "automapper/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.9.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "FluentValidation/8.5.0": {
       "sha512": "gH9TOcn/l4WEG+h17z9sOPUf8rYX2NKBZ4hQjdPQWLeSyGlUiTCVVv6Dmpg2573Wtl2u1y11YmmhUO31gcZkeQ==",
       "type": "package",
@@ -12113,15 +12161,22 @@
       "type": "project",
       "path": "../WePass.Domain/WePass.Domain.csproj",
       "msbuildProject": "../WePass.Domain/WePass.Domain.csproj"
+    },
+    "WePass.Infra/1.0.0": {
+      "type": "project",
+      "path": "../WePass.Infra/WePass.Infra.csproj",
+      "msbuildProject": "../WePass.Infra/WePass.Infra.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AutoMapper >= 9.0.0",
       "FluentValidation >= 8.5.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "WePass.Domain >= 1.0.0"
+      "WePass.Domain >= 1.0.0",
+      "WePass.Infra >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12159,6 +12214,9 @@
           "projectReferences": {
             "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj": {
               "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Domain\\WePass.Domain.csproj"
+            },
+            "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj": {
+              "projectPath": "D:\\documentos\\GitHub\\wepass\\back\\WePass_back-end\\WePass.API\\WePass.Infra\\WePass.Infra.csproj"
             }
           }
         }
@@ -12172,6 +12230,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
           "FluentValidation": {
             "target": "Package",
             "version": "[8.5.0, )"
