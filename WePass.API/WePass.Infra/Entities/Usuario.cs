@@ -9,6 +9,7 @@ namespace WePass.Infra.Entities
         {
             this.Compras = new List<Compra>();
             this.Eventos = new List<Evento>();
+            this.Pagamentos = new List<Pagamento>();
         }
 
         public string Nome { get; set; }
@@ -17,10 +18,15 @@ namespace WePass.Infra.Entities
         public string Login { get; set; }
         public string Senha { get; set; }
 
-        // relacionameto com compras
-        public IList<Compra> Compras { get; set; }
-        
         // relacionamento com eventos
         public IList<Evento> Eventos { get; set; }
+
+        // relacionameto com compras
+        public IList<Compra> Compras { get; set; }
+
+        // relacionamento com Pagamento
+        public IList<Pagamento> Pagamentos { get; set; }
+
+
     }
 }

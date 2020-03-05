@@ -35,6 +35,9 @@ namespace WePass.Service.Services
 
         #endregion
 
+
+
+
         public string AtivarUsuarioService(Guid id)
         {
             var desativarUsuario = BuscarUsuarioPorId(id);
@@ -48,10 +51,10 @@ namespace WePass.Service.Services
                 return Message.MSG_S002;
             }
 
-            return Message.MSG_D003;
+            return Message.MSG_S003;
         }
 
-        public List<Usuario> BuscarTodosEventorPorId(Usuario usuario)
+        public List<Usuario> BuscarTodosUsuarioPorId(Usuario usuario)
         {
             List<Usuario> user = new List<Usuario>();
 
@@ -81,7 +84,17 @@ namespace WePass.Service.Services
 
         public string CadastrarUsuarioService(Usuario usuario)
         {
+            var Cadastrar = BuscarTodosUsuarioPorId(usuario);
+
             bool verificandoUsuario = false;
+
+            foreach (var user in Cadastrar)
+            {
+                if (user.Nome == usuario.Nome)
+                {
+                    verificandoUsuario = true;
+                }
+            }
 
             if (verificandoUsuario == false)
             {
@@ -94,7 +107,7 @@ namespace WePass.Service.Services
 
 
         // deleção logica
-        public string DesativarAutorService(Guid id)
+        public string DesativarUsuarioService(Guid id)
         {
             var desativarUsuario = BuscarUsuarioPorId(id);
 
@@ -104,7 +117,7 @@ namespace WePass.Service.Services
 
                 _unitOfWork.Usuario.Update(desativarUsuario);
                 _unitOfWork.Commit();
-                return Message.MSG_S002;
+                return Message.MSG_D001;
             }
 
             return Message.MSG_D003;
@@ -121,6 +134,21 @@ namespace WePass.Service.Services
             }
 
             return usuario;
+        }
+
+        public bool Logar(Usuario usuario)
+        {
+            bool LogandoUsuario = false;
+
+            var verificandoLogin = _unitOfWork.Usuario.Query(l => l.Login == usuario.Login);
+            var verificandoSenha = _unitOfWork.Usuario.Query(s => s.Senha == usuario.Senha);
+
+            if (verificandoLogin != null && verificandoSenha != null)
+            {
+                LogandoUsuario = true;
+                return LogandoUsuario;
+            }
+            return LogandoUsuario;
         }
     }
 }

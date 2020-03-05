@@ -10,7 +10,8 @@ namespace WePass.Infra.Entities
         {
             this.Compras = new List<Compra>();
         }
-        // informar qual forma de pagamento
+
+        //informar qual forma de pagamento
         public string FormaPagamento { get; set; }
 
         //pagamento cartao
@@ -20,6 +21,10 @@ namespace WePass.Infra.Entities
 
         //pagamento dinheiro
         public int? Dinheiro { get; set; }
+
+        //relacionamento com usuario
+        public Guid UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
 
         // relacionameto com compras
         public IList<Compra> Compras { get; set; }

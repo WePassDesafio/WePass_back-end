@@ -19,6 +19,6 @@ namespace WePass.Service.Interfaces
         string AtivarPagamentoService(Guid id);
 
         //Delete
-        string DesativarUsuarioService(Pagamento pagamento);
+        string DesativarPagamentoService(Pagamento pagamento);
     }
 }

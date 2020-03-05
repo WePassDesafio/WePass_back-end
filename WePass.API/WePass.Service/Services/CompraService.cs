@@ -80,30 +80,19 @@ namespace WePass.Service.Services
 
         public string CadastrarCompraService(Compra compra)
         {
-            throw new NotImplementedException();
+            var cadastrar = BuscarTodasComprasPorIdService(compra);
+
+            bool VerificandoLivro = false;
+
+
+            if (VerificandoLivro == false)
+            {
+                _unitOfWork.Compra.Add(compra);
+                _unitOfWork.Commit();
+                return Message.MSG_S001;
+            }
+            return Message.MSG_S004;
         }
-        //public string CadastrarCompraService(Compra compra)
-        //{
-        //    var cadastrar = BuscarTodasComprasPorIdService(compra);
-
-        //    bool VerificandoLivro = false;
-
-        //    foreach (var vericicandoCadastro in cadastrar)
-        //    {
-        //        if (vericicandoCadastro.Id == compra.NomeF)
-        //        {
-        //            VerificandoLivro = true;
-        //        }
-        //    }
-
-        //    if (VerificandoLivro == false)
-        //    {
-        //        _unitOfWork.Autor.Add(autor);
-        //        _unitOfWork.Commit();
-        //        return Message.MSG_S001;
-        //    }
-        //    return Message.MSG_S004;
-        //}
 
         public string DesativarCompraService(Guid id)
         {
@@ -121,9 +110,17 @@ namespace WePass.Service.Services
             return Message.MSG_D003;
         }
 
-        public Evento EditarCompraService(Compra compra)
+        public Compra EditarCompraService(Compra compra)
         {
-            throw new NotImplementedException();
+            var editarCompra = BuscarCompraPorIdService(compra.Id);
+
+            if (editarCompra != null)
+            {
+                _unitOfWork.Compra.Update(compra);
+                _unitOfWork.Commit();
+            }
+
+            return compra;
         }
 
     }

@@ -46,7 +46,7 @@ namespace WePass.Service.Services
                 return Message.MSG_S002;
             }
 
-            return Message.MSG_D003;
+            return Message.MSG_S003;
         }
 
         public Evento BuscarEventoPorIdService(Guid id)
@@ -78,7 +78,17 @@ namespace WePass.Service.Services
 
         public string CadastrarEventoService(Evento evento)
         {
+            var Cadastrar = BuscarTodosEventorPorId(evento);
+
             bool verificandoEvento = false;
+
+            foreach (var user in Cadastrar)
+            {
+                if (user.NomeEvento == evento.NomeEvento && user.DataEvento == evento.DataEvento && evento.Categoria == user.Categoria)
+                {
+                    verificandoEvento = true;
+                }
+            }
 
             if (verificandoEvento == false)
             {
@@ -99,7 +109,7 @@ namespace WePass.Service.Services
 
                 _unitOfWork.Evento.Update(desativarEvento);
                 _unitOfWork.Commit();
-                return Message.MSG_S002;
+                return Message.MSG_D001;
             }
 
             return Message.MSG_D003;

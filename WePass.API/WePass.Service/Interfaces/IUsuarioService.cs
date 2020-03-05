@@ -11,13 +11,15 @@ namespace WePass.Service.Interfaces
 
         //Read
         Usuario BuscarUsuarioPorId(Guid id);
-        List<Usuario> BuscarTodosEventorPorId(Usuario usuario);
+        List<Usuario> BuscarTodosUsuarioPorId(Usuario usuario);
+
+        bool Logar(Usuario usuario);
 
         //Update
         Usuario EditarUsuario(Usuario usuario);
         string AtivarUsuarioService(Guid id);
 
         //Delete logico
-        string DesativarAutorService(Guid id);
+        string DesativarUsuarioService(Guid id);
     }
 }

@@ -14,7 +14,7 @@ namespace WePass.Infra.Config
         {
             builder.ToTable("Compra");
             builder.HasKey(x => x.Id).HasName("Id_Compra");
-            builder.Property(x => x.Id).HasColumnName("Id"); 
+            builder.Property(x => x.Id).HasColumnName("Id");
 
             builder.HasOne(u => u.Usuario).WithMany(c => c.Compras).HasForeignKey(a => a.UsuarioId);
             builder.HasOne(e => e.Evento).WithMany(c => c.Compras).HasForeignKey(e => e.EventoId);

@@ -39,6 +39,8 @@ namespace WePass.Infra.Migrations
 
                     b.Property<Guid>("UsuarioId");
 
+                    b.Property<int>("Vezes");
+
                     b.HasKey("Id")
                         .HasName("Id_Compra");
 
@@ -73,7 +75,7 @@ namespace WePass.Infra.Migrations
 
                     b.Property<Guid>("UsuarioId");
 
-                    b.Property<string>("ValorIngresso");
+                    b.Property<double>("ValorIngresso");
 
                     b.HasKey("Id")
                         .HasName("Id_Evento");
@@ -99,6 +101,8 @@ namespace WePass.Infra.Migrations
 
                     b.Property<DateTimeOffset?>("UpdateDate");
 
+                    b.Property<Guid>("UsuarioId");
+
                     b.Property<int?>("codigoSeguranca");
 
                     b.Property<int?>("numeroCartao");
@@ -107,6 +111,8 @@ namespace WePass.Infra.Migrations
 
                     b.HasKey("Id")
                         .HasName("Id_Pagamento");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Pagamento");
                 });
@@ -161,6 +167,14 @@ namespace WePass.Infra.Migrations
                 {
                     b.HasOne("WePass.Infra.Entities.Usuario", "Usuario")
                         .WithMany("Eventos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("WePass.Infra.Entities.Pagamento", b =>
+                {
+                    b.HasOne("WePass.Infra.Entities.Usuario", "Usuario")
+                        .WithMany("Pagamentos")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });

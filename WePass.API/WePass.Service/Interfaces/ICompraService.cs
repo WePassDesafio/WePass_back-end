@@ -15,7 +15,7 @@ namespace WePass.Service.Interfaces
         List<Compra> BuscarTodasComprasPorIdService(Compra compra);
 
         //Update
-        Evento EditarCompraService(Compra compra);
+        Compra EditarCompraService(Compra compra);
         string AtivarCompraService(Guid id);
 
         //Delete

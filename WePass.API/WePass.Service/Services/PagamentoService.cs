@@ -89,7 +89,7 @@ namespace WePass.Service.Services
             return Message.MSG_S004;
         }
 
-        public string DesativarUsuarioService(Pagamento pagamento)
+        public string DesativarPagamentoService(Pagamento pagamento)
         {
             var desativarPagamento = BuscarPagamentoPorId(pagamento.Id);
 

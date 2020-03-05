@@ -7,6 +7,8 @@ namespace WePass.Infra.Entities
     {
         public int QuantidadeIngresso { get; set; }
 
+        public int Vezes { get; set; }
+
         //relacionamento com usuario
         public Guid UsuarioId { get; set; }
         public Usuario Usuario { get; set; }

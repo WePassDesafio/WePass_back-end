@@ -11,6 +11,7 @@ namespace WePass.Domain.Model
         {
             this.Compras = new List<Compra>();
             this.Eventos = new List<Evento>();
+            this.Pagamentos = new List<Pagamento>();
         }
         public string Nome { get; set; }
         public int Idade { get; set; }
@@ -18,12 +19,14 @@ namespace WePass.Domain.Model
         public string Login { get; set; }
         public string Senha { get; set; }
 
+        // relacionamento com eventos
+        public IList<Evento> Eventos { get; set; }
+
         // relacionameto com compras
         public IList<Compra> Compras { get; set; }
 
-
-        // relacionamento com eventos
-        public IList<Evento> Eventos { get; set; }
+        // relacionamento com Pagamento
+        public IList<Pagamento> Pagamentos { get; set; }
 
 
 
