@@ -29,7 +29,7 @@ namespace WePass.API.Controllers
             return _usuarioService.BuscarUsuarioPorId(id);
         }
         
-        [HttpGet("Login")]
+        [HttpPost("Login")]
         public bool LoginUsuario(Usuario usuario)
         {
             return _usuarioService.Logar(usuario);
