@@ -76,6 +76,21 @@ namespace WePass.Service.Services
             return autor;
         }
 
+        public List<Evento> BuscarTodosEventos()
+        {
+            List<Evento> EventoOn = new List<Evento>();
+
+            EventoOn = _unitOfWork.Evento.List().OrderBy(x => x.Active != false).ToList();
+
+
+            if (EventoOn == null)
+            {
+                throw new WePassExceptions("Evento invalido");
+            }
+
+            return EventoOn;
+        }
+
         public string CadastrarEventoService(Evento evento)
         {
             var Cadastrar = BuscarTodosEventorPorId(evento);

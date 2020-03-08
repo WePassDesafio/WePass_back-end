@@ -29,6 +29,12 @@ namespace WePass.API.Controllers
             return _eventoService.BuscarEventoPorIdService(id);
         }
 
+        [HttpGet("BuscarTodosEventos")]
+        public List<Evento> BuscarTodosEventos()
+        {
+            return _eventoService.BuscarTodosEventos();
+        }
+
         [HttpPost("CadastrarEvento")]
         public string CadastrarEvento(Evento evento)
         {

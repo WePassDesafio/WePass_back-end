@@ -14,6 +14,9 @@ namespace WePass.Service.Interfaces
         Evento BuscarEventoPorIdService(Guid id);
         List<Evento> BuscarTodosEventorPorId(Evento evento);
 
+        List<Evento> BuscarTodosEventos();
+
+
         //Update
         Evento EditarEventoService(Evento evento);
         string AtivarEventoService(Guid id);
